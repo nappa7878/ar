@@ -52,18 +52,24 @@
                     this.m1.object3D.getWorldPosition(this.p1);
 
                     let distance = this.p0.distanceTo(this.p1);
-                    let makersize = 4 //cm
-                    console.log(distance*makersize);
+                    let markersize = 4 // cm
+                    console.log(distance * markersize);
 
                     this.geometry.vertices[0] = this.p0;
                     this.geometry.vertices[1] = this.p1;
                     this.geometry.verticesNeedUpdate = true;
-                    this.line.visible = true;
+                    if (distance * markersize < 8) {
+                        this.line.visible = true;
+                        this.line1.visible = false;
+                    } else {
+                        this.line1.visible = true;
+                        this.line.visible = false;
+                    }
                 }
                 else {
                     this.line.visible = false;
+                    this.line1.visible = false;
                 }
-            }
         });
 
     </script>
