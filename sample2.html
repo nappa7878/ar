@@ -60,10 +60,17 @@
                     this.geometry.vertices[0] = this.p0;
                     this.geometry.vertices[1] = this.p1;
                     this.geometry.verticesNeedUpdate = true;
-                    this.line1.visible = true;
+                    if(distance*markersize <8 ){
+                        this.line1.visible = false;
+                        this.line.visible = true;
+                    }else{
+                        this.line.visible = false;
+                        this.line1.visible = true;
+                    }
                 }
                 else {
                     this.line1.visible = false;
+                    this.line.visible = false;
                 }
             }
         });
