@@ -39,12 +39,12 @@
                 this.material = new THREE.LineBasicMaterial({ color: 0xFF0000 });
                 this.line = new THREE.Line(this.geometry, this.material);
 
-                this.material1 = new THREE.LineBasicMaterial({ color: 0x00FF00 });
-                this.line1 = new THREE.Line(this.geometry, this.material1);
+               // this.material1 = new THREE.LineBasicMaterial({ color: 0x00FF00 });
+               // this.line1 = new THREE.Line(this.geometry, this.material1);
 
                 let scene = document.querySelector('a-scene').object3D;
                 scene.add(this.line);
-                scene.add(this.line1);
+               // scene.add(this.line1);
             },
 
             tick: function (time, deltaTime) {
