@@ -52,7 +52,8 @@
                     this.m1.object3D.getWorldPosition(this.p1);
 
                     let distance = this.p0.distanceTo(this.p1);
-                    console.log(distance);
+                    let makersize = 4 //cm
+                    console.log(distance*makersize);
 
                     this.geometry.vertices[0] = this.p0;
                     this.geometry.vertices[1] = this.p1;
