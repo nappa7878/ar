@@ -39,12 +39,11 @@
                 this.material = new THREE.LineBasicMaterial({ color: 0xFF0000 });
                 this.line = new THREE.Line(this.geometry, this.material);
 
-               // this.material1 = new THREE.LineBasicMaterial({ color: 0x00FF00 });
-               // this.line1 = new THREE.Line(this.geometry, this.material1);
+
+
 
                 let scene = document.querySelector('a-scene').object3D;
                 scene.add(this.line);
-               // scene.add(this.line1);
             },
 
             tick: function (time, deltaTime) {
@@ -54,23 +53,17 @@
 
                     let distance = this.p0.distanceTo(this.p1);
                     let markersize = 4 // cm
-                    console.log(distance * markersize);
+                    console.log(distance*markersize);
 
                     this.geometry.vertices[0] = this.p0;
                     this.geometry.vertices[1] = this.p1;
                     this.geometry.verticesNeedUpdate = true;
-                    //if (distance * markersize < 8) {
-                        this.line.visible = true;
-                    //    this.line1.visible = false;
-                    //} else {
-                    //    this.line1.visible = true;
-                    //    this.line.visible = false;
-                    //}
+                    this.line.visible = true;
                 }
                 else {
                     this.line.visible = false;
-                   // this.line1.visible = false;
                 }
+            }
         });
 
     </script>
