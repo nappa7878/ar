@@ -59,11 +59,11 @@
                     this.geometry.vertices[1] = this.p1;
                     this.geometry.verticesNeedUpdate = true;
                     if (distance * markersize < 8) {
-                        this.line1.visible = false;
-                        this.line.visible = true;
+                        this.material = new THREE.LineBasicMaterial({ color: 0xFF0000 });
+                        this.line = new THREE.Line(this.geometry, this.material);
                     } else {
-                        this.line.visible = false;
-                        this.line1.visible = true;                        
+                        this.material = new THREE.LineBasicMaterial({ color: 0x00FF00 });
+                        this.line = new THREE.Line(this.geometry, this.material);
                     }
                     this.line.visible = true;
                 }
