@@ -59,10 +59,10 @@
                     this.geometry.vertices[1] = this.p1;
                     this.geometry.verticesNeedUpdate = true;
                     if (distance * markersize < 8) {
-                        this.line.LineBasicMaterial({ color: 0xFF0000 });
+                        this.line.material.color.setHex(0x00FF00);
                         this.line.visible = true;
                     } else {
-                        this.line.LineBasicMaterial({ color: 0x00FF00 });
+                        this.line.material.color.setHex(0xFF0000);
                         this.line.visible = true;
                     }
                     this.geometry.verticesNeedUpdate = true;
