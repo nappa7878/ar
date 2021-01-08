@@ -8,8 +8,11 @@
 
     <script>
 
-        // store visibility data in object;
-        //  can only draw line when both are visible.
+        // ２つのマーカー間に線分を引く
+        // マーカーの大きさは　４cm
+        // マーカー間の距離　８cm未満：赤色　　８cm以上：緑色
+        // 距離をコンソールに表示
+        
         let markerVisible = { m0: false, m1: false };
 
         AFRAME.registerComponent('registerevents', {
@@ -85,9 +88,6 @@
         <a-marker type="barcode" value="1" id="m1" registerevents>
             <a-plane position="0 0 0" rotation="-90 0 0" material="color: white; transparent: true; opacity: 0.10;">
             </a-plane>
-        </a-marker>
-
-        <a-marker type="pattern" url="data/kanji.patt" id="baseMarker">
         </a-marker>
 
         <a-entity camera></a-entity>
