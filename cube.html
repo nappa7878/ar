@@ -89,7 +89,20 @@
             el = document.querySelector($id);
             el.setAttribute('visible', true);
         }
+        function modelSet() {
+            console.log(1);
+            var el;
+            el = document.querySelector('#cube');
+            el.setAttribute('visible', true);
+            el = document.querySelector('#sphere');
+            el.setAttribute('visible', false);
+            el = document.querySelector('#cylinder');
+            el.setAttribute('visible', false);
+        }
+    </script>
 
+    <script>
+        modelSet();
     </script>
 </body>
 
