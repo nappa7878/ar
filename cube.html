@@ -30,19 +30,19 @@
         <a-marker preset="hiro">
             <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
             <!-- <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box> -->
-            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.50;">
+            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.70;">
             </a-box>
             <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
-                material="color: blue; transparent: true; opacity: 0.50;">
+                material="color: blue; transparent: true; opacity: 0.70;">
             </a-sphere>
             <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
-                material="color: green; transparent: true; opacity: 0.50;">
+                material="color: green; transparent: true; opacity: 0.70;">
             </a-cylinder>
             <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
-                material="color: orange; transparent: true; opacity: 0.50;">
+                material="color: orange; transparent: true; opacity: 0.70;">
             </a-dodecahedron>
-            <a-tetrahedron id="tetrahedron" position="0 0 0" radius="1"
-                material="color: hotpink; transparent: true; opacity: 0.50;">
+            <a-tetrahedron id="tetrahedron" position="0 0.5 0" rotate="0 0 90" radius="0.5"
+                material="color: hotpink; transparent: true; opacity: 0.70;">
             </a-tetrahedron>
         </a-marker>
 
@@ -55,8 +55,8 @@
         <input type="button" id="b1" value="立方体" onclick="modelChange('#cube');"><br>
         <input type="button" id="b2" value="　球　" onclick="modelChange('#sphere');"><br>
         <input type="button" id="b3" value="円　柱" onclick="modelChange('#cylinder');"><br>
-        <input type="button" id="b4" value="十二面体" onclick="modelChange('#dodecahedron');"><br>
-        <input type="button" id="b5" value="四面体" onclick="modelChange('#tetrahedron');"><br>
+        <input type="button" id="b4" value="正十二面体" onclick="modelChange('#dodecahedron');"><br>
+        <input type="button" id="b5" value="正四面体" onclick="modelChange('#tetrahedron');"><br>
     </div>
 
     <script>
