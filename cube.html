@@ -21,13 +21,15 @@
         <a-marker preset="hiro">
             <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
             <!-- <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box> -->
-            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.50;">
+            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.50;"
+                style="visibility:visible">
             </a-box>
-            <a-sphere id="sphere" position="0 0.5 0" material="color: blue; transparent: true; opacity: 0.50;">
+            <a-sphere id="sphere" position="0 0.5 0" material="color: blue; transparent: true; opacity: 0.50;"
+                style="visibility:hidden">
             </a-sphere>
             <!-- <a-cylinder id="cylinder" color="#060" radius=".5" height="3" position="0 0 -3" rotation="20 20 0"> -->
-            <a-cylinder id="cylinder" position="0 0 -3" rotation="20 20 0" radius="0.5" height="3"
-                material="color: green; transparent: true; opacity: 0.50;">
+            <a-cylinder id="cylinder" position="0 1.5 0" rotation="20 20 0" radius="0.5" height="3"
+                material="color: green; transparent: true; opacity: 0.50;" style="visibility:hidden">
             </a-cylinder>
 
         </a-marker>
