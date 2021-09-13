@@ -20,10 +20,16 @@
         <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
         <a-marker preset="hiro">
             <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-            <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box>
-            <!-- <a-cylinder id="cylinder" color="#060" radius=".5" height="3" position="0 0 -3" rotation="20 20 0"
-                wireframe="false">
-            </a-cylinder> -->
+            <!-- <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box> -->
+            <a-box id="clue" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.50;">
+            </a-box>
+            <a-sphere id="sphere" position="0 0.5 0" material="color: blue; transparent: true; opacity: 0.50;">
+            </a-sphere>
+            <!-- <a-cylinder id="cylinder" color="#060" radius=".5" height="3" position="0 0 -3" rotation="20 20 0"> -->
+            <a-cylinder id="cylinder" position="0 0 -3" rotation="20 20 0" radius="0.5" height="3"
+                material="color: green; transparent: true; opacity: 0.50;">
+            </a-cylinder>
+
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -32,7 +38,10 @@
     </a-scene>
 
     <div style="position: fixed; bottom: 150px;">
-        <input type="button" id="b1" value="change" onclick="click1();">
+        <input type="button" id="b1" value="change" onclick="modelChange('#cube');"><br>
+        <input type="button" id="b2" value="change" onclick="modelChange('#sphere');"><br>
+        <input type="button" id="b3" value="change" onclick="modelChange('#cylinder');"><br>
+        <!-- <input type="button" id="b4" value="change" onclick="click1();"> -->
     </div>
 
     <script>
@@ -53,6 +62,18 @@
                 el.setAttribute('visible', true);
             }
         }
+        function modelChange(model) {
+
+            var $id = model;
+            console.log("click1");
+
+            document.querySelector('#cube').setAttribute('visible', false);
+            document.querySelector('#sphere').setAttribute('visible', false);
+            document.querySelector('#cylinder').setAttribute('visible', false);
+
+            document.querySelector($id).setAttribute('visible', true);
+        }
+
     </script>
 </body>
 
