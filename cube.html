@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="cube.js"></script>
     <title>ARサンプル</title>
 </head>
 
@@ -19,7 +20,10 @@
         <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
         <a-marker preset="hiro">
             <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-            <a-box color="red" position="0 0.5 0" wireframe="false"></a-box>
+            <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box>
+            <!-- <a-cylinder id="cylinder" color="#060" radius=".5" height="3" position="0 0 -3" rotation="20 20 0"
+                wireframe="false">
+            </a-cylinder> -->
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -27,6 +31,9 @@
 
     </a-scene>
 
+    <div style="position: fixed; bottom: 150px;">
+        <input type="button" id="b1" value="change" onclick="modelChange();">
+    </div>
 </body>
 
 </html>
