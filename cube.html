@@ -42,11 +42,17 @@
             console.log("click1");
 
             var p2 = document.getElementById("cube");
-            console.log(p2.style.visibility);
-            if (p2.style.visibility == "visible") {
-                p2.style.visibility = "hidden";
+            // console.log(p2.style.visibility);
+            // if (p2.style.visibility == "visible") {
+            //     p2.style.visibility = "hidden";
+            // } else {
+            //     p2.style.visibility = "visible";
+            // }="block";
+            console.log(p2.style.display);
+            if (p2.style.display == "block") {
+                p2.style.display = "none";
             } else {
-                p2.style.visibility = "visible";
+                p2.style.display = "block";
             }
         }
     </script>
