@@ -65,7 +65,7 @@
         function modelChange(model) {
 
             var $id = model;
-            console.log("click1");
+            console.log($id);
 
             var el;
             el = document.querySelector('#cube');
@@ -75,7 +75,8 @@
             el = document.querySelector('#cylinder');
             el.setAttribute('visible', false);
 
-            document.querySelector($id).setAttribute('visible', true);
+            el = document.querySelector($id);
+            el.setAttribute('visible', true);
         }
 
     </script>
