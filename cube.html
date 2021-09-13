@@ -13,7 +13,6 @@
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
     <!-- AR.js ライブラリの読み込み -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="./js/jquery-3.2.1.min.js"></script>
 
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
@@ -33,26 +32,25 @@
     </a-scene>
 
     <div style="position: fixed; bottom: 150px;">
-        <input type="button" id="b1" value="change" onclick="modelChange();">
+        <input type="button" id="b1" value="change" onclick="click1();">
     </div>
 
     <script>
-        function modelChange() {
+        function click1() {
 
             console.log("click1");
 
-            var p2 = document.getElementById("cube");
-            // console.log(p2.style.visibility);
-            // if (p2.style.visibility == "visible") {
-            //     p2.style.visibility = "hidden";
-            // } else {
-            //     p2.style.visibility = "visible";
-            // }="block";
-            console.log(p2.style.display);
-            if (p2.style.display == "block") {
-                p2.style.display = "none";
+            // Entityを取得
+            var el = document.querySelector('#cube');
+            console.log(el.getAttribute('visible'));
+
+            // 表示中の場合
+            if (el.getAttribute('visible')) {
+                // 非表示に切り替え
+                el.setAttribute('visible', false);
             } else {
-                p2.style.display = "block";
+                // 表示に切り替え
+                el.setAttribute('visible', true);
             }
         }
     </script>
