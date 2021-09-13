@@ -23,13 +23,9 @@
     <!-- AR.js ライブラリの読み込み -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
-    <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIを非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
 
-        <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
         <a-marker preset="hiro">
-            <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-            <!-- <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box> -->
             <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.70;">
             </a-box>
             <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
@@ -41,7 +37,7 @@
             <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
                 material="color: orange; transparent: true; opacity: 0.70;">
             </a-dodecahedron>
-            <a-tetrahedron id="tetrahedron" position="0 0.5 0" radius="1"
+            <a-tetrahedron id="tetrahedron" position="0 0.5 0" radius="0.5"
                 material="color: hotpink; transparent: true; opacity: 0.70;">
             </a-tetrahedron>
             <a-cone id="cone" position="0 0.5 0" radius-bottom="0.5" radius-top="0"
@@ -63,27 +59,8 @@
     </div>
 
     <script>
-        function click1() {
-
-            console.log("click1");
-
-            // Entityを取得
-            var el = document.querySelector('#cube');
-            console.log(el.getAttribute('visible'));
-
-            // 表示中の場合
-            if (el.getAttribute('visible')) {
-                // 非表示に切り替え
-                el.setAttribute('visible', false);
-            } else {
-                // 表示に切り替え
-                el.setAttribute('visible', true);
-            }
-        }
         function modelChange(model) {
-
             var $id = model;
-            console.log($id);
 
             var el;
             el = document.querySelector('#cube');
