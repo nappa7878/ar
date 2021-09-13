@@ -30,15 +30,16 @@
         <a-marker preset="hiro">
             <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
             <!-- <a-box id="cube" color="red" position="0 0.5 0" wireframe="false"></a-box> -->
-            <a-box id="cube" class="view" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.50;">
+            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.50;">
             </a-box>
-            <a-sphere id="sphere" class="nonview" position="0 0.5 0" radius="0.5"
+            <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
                 material="color: blue; transparent: true; opacity: 0.50;">
             </a-sphere>
-            <a-cylinder id="cylinder" class="nonview" position="0 0.5 0" radius="0.5" height="1"
+            <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
                 material="color: green; transparent: true; opacity: 0.50;">
             </a-cylinder>
-
+            <a-dodecahedron position="0 0.5 0" radius="0.5" material="color: orange; transparent: true; opacity: 0.50;">
+            </a-dodecahedron>
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -50,7 +51,7 @@
         <input type="button" id="b1" value="立方体" onclick="modelChange('#cube');"><br>
         <input type="button" id="b2" value="　球　" onclick="modelChange('#sphere');"><br>
         <input type="button" id="b3" value="円　柱" onclick="modelChange('#cylinder');"><br>
-        <!-- <input type="button" id="b4" value="change" onclick="click1();"> -->
+        <input type="button" id="b3" value="十二面体" onclick="modelChange('#dodecahedron');"><br>
     </div>
 
     <script>
@@ -83,18 +84,21 @@
             el.setAttribute('visible', false);
             el = document.querySelector('#cylinder');
             el.setAttribute('visible', false);
+            el = document.querySelector('#dodecahedron');
+            el.setAttribute('visible', false);
 
             el = document.querySelector($id);
             el.setAttribute('visible', true);
         }
         function modelSet() {
-            console.log(1);
             var el;
             el = document.querySelector('#cube');
             el.setAttribute('visible', true);
             el = document.querySelector('#sphere');
             el.setAttribute('visible', false);
             el = document.querySelector('#cylinder');
+            el.setAttribute('visible', false);
+            el = document.querySelector('#dodecahedron');
             el.setAttribute('visible', false);
         }
     </script>
