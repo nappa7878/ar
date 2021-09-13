@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="cube.js"></script>
+    <!-- <script src="cube.js"></script> -->
     <title>ARサンプル</title>
 </head>
 
@@ -34,6 +34,26 @@
     <div style="position: fixed; bottom: 150px;">
         <input type="button" id="b1" value="change" onclick="modelChange();">
     </div>
+
+    <script>
+        function cmodelChange() {
+
+            console.log("click1");
+
+            // Entityを取得
+            var el = document.getElementById('cube');
+            console.log(el.getAttribute('visible'));
+
+            // 表示中の場合
+            if (el.getAttribute('visible')) {
+                // 非表示に切り替え
+                el.setAttribute('visible', false);
+            } else {
+                // 表示に切り替え
+                el.setAttribute('visible', true);
+            }
+        }
+    </script>
 </body>
 
 </html>
