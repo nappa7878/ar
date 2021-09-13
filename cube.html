@@ -67,11 +67,15 @@
             var $id = model;
             console.log("click1");
 
-            document.querySelector('#cube').setAttribute('visible', false);
-            document.querySelector('#sphere').setAttribute('visible', false);
-            document.querySelector('#cylinder').setAttribute('visible', false);
+            var el;
+            el = document.querySelector('#cube');
+            el.setAttribute('visible', false);
+            el = document.querySelector('#sphere');
+            el.setAttribute('visible', false);
+            el = document.querySelector('#cylinder');
+            el.setAttribute('visible', false);
 
-            document.querySelector($id).setAttribute('visible', true);
+            // document.querySelector($id).setAttribute('visible', true);
         }
 
     </script>
