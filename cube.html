@@ -27,7 +27,7 @@
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-sphere>
             <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
-                material="color: green; transparent: true; opacity: 0.90;" wireframe="false">
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-cylinder>
             <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
@@ -52,124 +52,42 @@
 
     <div style="position: fixed; bottom: 150px;">
         <input type="button" id="b1" value="立方体" onclick="modelChange('cube');"><br>
-        <input type="button" id="b1" value="直方体" onclick="modelChange('chokuhoutai');"><br>
-        <input type="button" id="b2" value="三角柱" onclick="modelChange('sankakuchu');"><br>
-        <input type="button" id="b2" value="　球　" onclick="modelChange('sphere');"><br>
-        <input type="button" id="b3" value="円　柱" onclick="modelChange('cylinder');"><br>
-        <input type="button" id="b4" value="円すい" onclick="modelChange('cone');"><br>
-        <input type="button" id="b2" value="三角すい" onclick="modelChange('sankakusui');"><br>
-        <input type="button" id="b2" value="四角すい" onclick="modelChange('shikakusui');"><br>
-        <input type="button" id="b5" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
-        <input type="button" id="b6" value="正四面体" onclick="modelChange('tetrahedron');"><br>
+        <input type="button" id="b2" value="直方体" onclick="modelChange('chokuhoutai');"><br>
+        <input type="button" id="b3" value="三角柱" onclick="modelChange('sankakuchu');"><br>
+        <input type="button" id="b5" value="円　柱" onclick="modelChange('cylinder');"><br>
+        <input type="button" id="b6" value="円すい" onclick="modelChange('cone');"><br>
+        <input type="button" id="b7" value="三角すい" onclick="modelChange('sankakusui');"><br>
+        <input type="button" id="b8" value="四角すい" onclick="modelChange('shikakusui');"><br>
+        <input type="button" id="b4" value="　球　" onclick="modelChange('sphere');"><br>
+        <input type="button" id="b9" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
+        <input type="button" id="b10" value="正四面体" onclick="modelChange('tetrahedron');"><br>
     </div>
 
     <script>
-        function modelChange0(model) {
-            var $id = model;
-
+        function modelSet() {
+            var figure = [
+                'cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone',
+                'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui'
+            ];
             var el;
-            el = document.querySelector('#cube');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#sphere');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#cylinder');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#cone');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#dodecahedron');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#tetrahedron');
-            el.setAttribute('visible', false);
 
-            el = document.querySelector($id);
-            el.setAttribute('visible', true);
-        }
-        function modelSet0() {
-            var el;
-            el = document.querySelector('#cube');
-            el.setAttribute('visible', true);
-            el = document.querySelector('#sphere');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#cylinder');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#cone');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#dodecahedron');
-            el.setAttribute('visible', false);
-            el = document.querySelector('#tetrahedron');
-            el.setAttribute('visible', false);
-        }
-        function modelChange1(model) {
-            var $id = model;
-
-            var el;
-            el = document.getElementById('cube');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sphere');
-            el.setAttribute('visible', false);
-            el = document.getElementById('cylinder');
-            el.setAttribute('visible', false);
-            el = document.getElementById('cone');
-            el.setAttribute('visible', false);
-            el = document.getElementById('dodecahedron');
-            el.setAttribute('visible', false);
-            el = document.getElementById('tetrahedron');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sankakuchu');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sankakusui');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sankakusui');
-            el.setAttribute('visible', false);
-
-            el = document.getElementById($id);
-            el.setAttribute('visible', true);
-        }
-        function modelSet1() {
-            var el;
-            el = document.getElementById('cube');
-            el.setAttribute('visible', true);
-            el = document.getElementById('sphere');
-            el.setAttribute('visible', false);
-            el = document.getElementById('cylinder');
-            el.setAttribute('visible', false);
-            el = document.getElementById('cone');
-            el.setAttribute('visible', false);
-            el = document.getElementById('dodecahedron');
-            el.setAttribute('visible', false);
-            el = document.getElementById('tetrahedron');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sankakuchu');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sankakusui');
-            el.setAttribute('visible', false);
-            el = document.getElementById('sankakusui');
-            el.setAttribute('visible', false);
+            for (var i = 0; i < figure.length; i++) {
+                el = document.getElementById(figure[i]);
+                el.setAttribute('visible', false);
+            }
         }
         function modelChange(model) {
-            var figure = ['cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui']
-            var el;
+            // var figure = ['cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui']
+            // var el;
 
-            for (var i = 0; i < figure.length; i++) {
-                el = document.getElementById(figure[i]);
-                el.setAttribute('visible', false);
-            }
+            // for (var i = 0; i < figure.length; i++) {
+            //     el = document.getElementById(figure[i]);
+            //     el.setAttribute('visible', false);
+            // }
+            modelSet();
 
-            el = document.getElementById(model);
+            var el = document.getElementById(model);
             el.setAttribute('visible', true);
-
-        }
-        function modelSet() {
-            var figure = ['cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui']
-            var el;
-
-            // el = document.getElementById(figure[0]);
-            // el.setAttribute('visible', true);
-
-            for (var i = 0; i < figure.length; i++) {
-                el = document.getElementById(figure[i]);
-                el.setAttribute('visible', false);
-            }
 
         }
     </script>
