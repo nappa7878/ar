@@ -7,6 +7,11 @@
     <!-- <script src="cube.js"></script> -->
     <title>ARサンプル</title>
 </head>
+<style>
+    .figureButton {
+        width: 100px;
+    }
+</style>
 
 <body style="margin:0px; overflow:hidden;">
     <!-- A-Frame ライブラリの読み込み -->
@@ -60,19 +65,19 @@
     </a-scene>
 
     <div style="position: fixed; bottom: 50px;">
-        <input type="button" id="b1" value="立方体" onclick="modelChange('cube');"><br>
-        <input type="button" id="b2" value="直方体" onclick="modelChange('chokuhoutai');"><br>
-        <input type="button" id="b3" value="三角柱" onclick="modelChange('sankakuchu');"><br>
-        <input type="button" id="b5" value="円　柱" onclick="modelChange('cylinder');"><br>
-        <input type="button" id="b6" value="円すい" onclick="modelChange('cone');"><br>
-        <input type="button" id="b7" value="三角すい" onclick="modelChange('sankakusui');"><br>
-        <input type="button" id="b8" value="四角すい" onclick="modelChange('shikakusui');"><br>
-        <input type="button" id="b4" value="　球　" onclick="modelChange('sphere');"><br>
-        <input type="button" id="b10" value="正四面体" onclick="modelChange('tetrahedron');"><br>
-        <input type="button" id="b10" value="正八面体" onclick="modelChange('octahedron');"><br>
-        <input type="button" id="b9" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
-        <input type="button" id="b9" value="正二十面体" onclick="modelChange('icosahedron');"><br>
-        <input type="button" id="b9" value="ドーナツ" onclick="modelChange('torus');"><br>
+        <input type="button" id="b1" class="figureButton" value="立方体" onclick="modelChange('cube');"><br>
+        <input type="button" id="b2" class="figureButton" value="直方体" onclick="modelChange('chokuhoutai');"><br>
+        <input type="button" id="b3" class="figureButton" value="三角柱" onclick="modelChange('sankakuchu');"><br>
+        <input type="button" id="b5" class="figureButton" value="円　柱" onclick="modelChange('cylinder');"><br>
+        <input type="button" id="b6" class="figureButton" value="円すい" onclick="modelChange('cone');"><br>
+        <input type="button" id="b7" class="figureButton" value="三角すい" onclick="modelChange('sankakusui');"><br>
+        <input type="button" id="b8" class="figureButton" value="四角すい" onclick="modelChange('shikakusui');"><br>
+        <input type="button" id="b9" class="figureButton" value="　球　" onclick="modelChange('sphere');"><br>
+        <input type="button" id="b10" class="figureButton" value="正四面体" onclick="modelChange('tetrahedron');"><br>
+        <input type="button" id="b11" class="figureButton" value="正八面体" onclick="modelChange('octahedron');"><br>
+        <input type="button" id="b12" class="figureButton" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
+        <input type="button" id="b13" class="figureButton" value="正二十面体" onclick="modelChange('icosahedron');"><br>
+        <input type="button" id="b14" class="figureButton" value="ドーナツ" onclick="modelChange('torus');"><br>
     </div>
 
     <script>
