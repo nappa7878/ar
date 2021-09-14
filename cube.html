@@ -7,15 +7,6 @@
     <!-- <script src="cube.js"></script> -->
     <title>ARサンプル</title>
 </head>
-<style>
-    .view {
-        visibility: visible;
-    }
-
-    .nonview {
-        visibility: hidden;
-    }
-</style>
 
 <body style="margin:0px; overflow:hidden;">
     <!-- A-Frame ライブラリの読み込み -->
@@ -42,6 +33,8 @@
             </a-tetrahedron>
             <a-cone id="cone" position="0 0.5 0" radius-bottom="0.5" radius-top="0"
                 material="color: skyblue; transparent: true; opacity: 0.70;"></a-cone>
+            <a-cylinder id="sankakuchu" segments-radial="3" position="0 0.5 0" radius="0.5" height="1"
+                material="color: skyblue; transparent: true; opacity: 0.70;"></a-cylinder>
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -50,16 +43,17 @@
     </a-scene>
 
     <div style="position: fixed; bottom: 150px;">
-        <input type="button" id="b1" value="立方体" onclick="modelChange('#cube');"><br>
-        <input type="button" id="b2" value="　球　" onclick="modelChange('#sphere');"><br>
-        <input type="button" id="b3" value="円　柱" onclick="modelChange('#cylinder');"><br>
-        <input type="button" id="b4" value="円すい" onclick="modelChange('#cone');"><br>
-        <input type="button" id="b5" value="正十二面体" onclick="modelChange('#dodecahedron');"><br>
-        <input type="button" id="b6" value="正四面体" onclick="modelChange('#tetrahedron');"><br>
+        <input type="button" id="b1" value="立方体" onclick="modelChange('cube');"><br>
+        <input type="button" id="b2" value="三角柱" onclick="modelChange('sankakuchu');"><br>
+        <input type="button" id="b2" value="　球　" onclick="modelChange('sphere');"><br>
+        <input type="button" id="b3" value="円　柱" onclick="modelChange('cylinder');"><br>
+        <input type="button" id="b4" value="円すい" onclick="modelChange('cone');"><br>
+        <input type="button" id="b5" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
+        <input type="button" id="b6" value="正四面体" onclick="modelChange('tetrahedron');"><br>
     </div>
 
     <script>
-        function modelChange(model) {
+        function modelChange0(model) {
             var $id = model;
 
             var el;
@@ -79,7 +73,7 @@
             el = document.querySelector($id);
             el.setAttribute('visible', true);
         }
-        function modelSet() {
+        function modelSet0() {
             var el;
             el = document.querySelector('#cube');
             el.setAttribute('visible', true);
@@ -92,6 +86,45 @@
             el = document.querySelector('#dodecahedron');
             el.setAttribute('visible', false);
             el = document.querySelector('#tetrahedron');
+            el.setAttribute('visible', false);
+        }
+        function modelChange(model) {
+            var $id = model;
+
+            var el;
+            el = document.getElementById('cube');
+            el.setAttribute('visible', false);
+            el = document.getElementById('sphere');
+            el.setAttribute('visible', false);
+            el = document.getElementById('cylinder');
+            el.setAttribute('visible', false);
+            el = document.getElementById('cone');
+            el.setAttribute('visible', false);
+            el = document.getElementById('dodecahedron');
+            el.setAttribute('visible', false);
+            el = document.getElementById('tetrahedron');
+            el.setAttribute('visible', false);
+            el = document.getElementById('sankakuchu');
+            el.setAttribute('visible', false);
+
+            el = document.getElementById($id);
+            el.setAttribute('visible', true);
+        }
+        function modelSet() {
+            var el;
+            el = document.getElementById('cube');
+            el.setAttribute('visible', true);
+            el = document.getElementById('sphere');
+            el.setAttribute('visible', false);
+            el = document.getElementById('cylinder');
+            el.setAttribute('visible', false);
+            el = document.getElementById('cone');
+            el.setAttribute('visible', false);
+            el = document.getElementById('dodecahedron');
+            el.setAttribute('visible', false);
+            el = document.getElementById('tetrahedron');
+            el.setAttribute('visible', false);
+            el = document.getElementById('sankakuchu');
             el.setAttribute('visible', false);
         }
     </script>
