@@ -17,28 +17,32 @@
     <a-scene embedded arjs="debugUIEnabled:false;">
 
         <a-marker preset="hiro">
-            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.70;" wireframe=true>
+            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.80;"
+                wireframe="false">
+            </a-box>
+            <a-box id="chokuhoutai" position="0 1 0" width="1" height="2"
+                material="color: red; transparent: true; opacity: 0.80;" wireframe="false">
             </a-box>
             <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
-                material="color: blue; transparent: true; opacity: 0.70;" wireframe=true>
+                material="color: blue; transparent: true; opacity: 0.80;" wireframe="false">
             </a-sphere>
             <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
-                material="color: green; transparent: true; opacity: 0.70;" wireframe=true>
+                material="color: green; transparent: true; opacity: 0.80;" wireframe="false">
             </a-cylinder>
             <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
-                material="color: orange; transparent: true; opacity: 0.70;" wireframe=true>
+                material="color: orange; transparent: true; opacity: 0.80;" wireframe="false">
             </a-dodecahedron>
             <a-tetrahedron id="tetrahedron" position="0 0.5 0" radius="0.5"
-                material="color: hotpink; transparent: true; opacity: 0.70;" wireframe=true>
+                material="color: hotpink; transparent: true; opacity: 0.80;" wireframe="false">
             </a-tetrahedron>
             <a-cone id="cone" position="0 0.5 0" radius-bottom="0.5" radius-top="0"
-                material="color: skyblue; transparent: true; opacity: 0.70;" wireframe=true></a-cone>
+                material="color: skyblue; transparent: true; opacity: 0.80;" wireframe="false"></a-cone>
             <a-cylinder id="sankakuchu" segments-radial="3" position="0 0.5 0" radius="0.5" height="1"
-                material="color: skyblue; transparent: true; opacity: 0.70;" wireframe=true></a-cylinder>
+                material="color: skyblue; transparent: true; opacity: 0.80;" wireframe="false"></a-cylinder>
             <a-cone id="sankakusui" segments-radial="3" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
-                material="color: blue; transparent: true; opacity: 0.70;" wireframe=true></a-cone>
+                material="color: blue; transparent: true; opacity: 0.80;" wireframe="false"></a-cone>
             <a-cone id="shikakusui" segments-radial="4" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
-                material="color: blue; transparent: true; opacity: 0.70;" wireframe=true></a-cone>
+                material="color: blue; transparent: true; opacity: 0.80;" wireframe="false"></a-cone>
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -48,6 +52,7 @@
 
     <div style="position: fixed; bottom: 150px;">
         <input type="button" id="b1" value="立方体" onclick="modelChange('cube');"><br>
+        <input type="button" id="b1" value="直方体" onclick="modelChange('chokuhoutai');"><br>
         <input type="button" id="b2" value="三角柱" onclick="modelChange('sankakuchu');"><br>
         <input type="button" id="b2" value="　球　" onclick="modelChange('sphere');"><br>
         <input type="button" id="b3" value="円　柱" onclick="modelChange('cylinder');"><br>
@@ -94,7 +99,7 @@
             el = document.querySelector('#tetrahedron');
             el.setAttribute('visible', false);
         }
-        function modelChange(model) {
+        function modelChange1(model) {
             var $id = model;
 
             var el;
@@ -111,6 +116,8 @@
             el = document.getElementById('tetrahedron');
             el.setAttribute('visible', false);
             el = document.getElementById('sankakuchu');
+            el.setAttribute('visible', false);
+            el = document.getElementById('sankakusui');
             el.setAttribute('visible', false);
             el = document.getElementById('sankakusui');
             el.setAttribute('visible', false);
@@ -136,9 +143,24 @@
             el.setAttribute('visible', false);
             el = document.getElementById('sankakusui');
             el.setAttribute('visible', false);
+            el = document.getElementById('sankakusui');
+            el.setAttribute('visible', false);
+        }
+        function modelChange(model) {
+            var figure = ['cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui']
+            var el;
+
+            for (var i = 1; i < figure.length; i++) {
+                el = document.getElementById(figure[i]);
+                el.setAttribute('visible', false);
+            }
+
+            el = document.getElementById(model);
+            el.setAttribute('visible', true);
+
         }
         function modelSet() {
-            var figure = ['cube', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui']
+            var figure = ['cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui']
             var el;
 
             el = document.getElementById(figure[0]);
@@ -154,6 +176,7 @@
 
     <script>
         modelSet();
+        modelChange('cube');
     </script>
 </body>
 
