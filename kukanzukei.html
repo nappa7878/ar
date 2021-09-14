@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- <script src="cube.js"></script> -->
+    <title>空間図形AR</title>
+</head>
+<style>
+    .figureButton {
+        width: 80px;
+    }
+</style>
+
+<body style="margin:0px; overflow:hidden;">
+    <!-- A-Frame ライブラリの読み込み -->
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <!-- AR.js ライブラリの読み込み -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+    <a-scene embedded arjs="debugUIEnabled:false;" vr-mode-ui="enabled: false;">
+
+        <a-marker preset="hiro">
+            <a-box id="cube" position="0 0.325 0" width="0.75" height="0.75" depth="0.75"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-box>
+            <a-box id="chokuhoutai" position="0 0.5 0" width="0.75" height="1" depth="0.75"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-box>
+            <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-sphere>
+            <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-cylinder>
+            <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-dodecahedron>
+            <a-tetrahedron id="tetrahedron" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-tetrahedron>
+            <a-cone id="cone" position="0 0.5 0" radius-bottom="0.5" radius-top="0"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
+            <a-cylinder id="sankakuchu" segments-radial="3" position="0 0.5 0" radius="0.5" height="1"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cylinder>
+            <a-cone id="sankakusui" segments-radial="3" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
+            <a-cone id="shikakusui" segments-radial="4" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
+            <a-icosahedron id="icosahedron" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-icosahedron>
+            <a-octahedron id="octahedron" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-octahedron>
+            <a-torus id="torus" position="0 0.5 0" radius="0.3" radius-tubular="0.05" rotation="90 0 0"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-torus>
+        </a-marker>
+
+        <!-- AR用のカメラを置く -->
+        <a-entity camera></a-entity>
+
+    </a-scene>
+
+    <div style="position: fixed; bottom: 50px;">
+        <input type="button" id="b1" class="figureButton" value="立方体" onclick="modelChange('cube');"><br>
+        <input type="button" id="b2" class="figureButton" value="直方体" onclick="modelChange('chokuhoutai');"><br>
+        <input type="button" id="b3" class="figureButton" value="三角柱" onclick="modelChange('sankakuchu');"><br>
+        <input type="button" id="b5" class="figureButton" value="円　柱" onclick="modelChange('cylinder');"><br>
+        <input type="button" id="b6" class="figureButton" value="円すい" onclick="modelChange('cone');"><br>
+        <input type="button" id="b7" class="figureButton" value="三角すい" onclick="modelChange('sankakusui');"><br>
+        <input type="button" id="b8" class="figureButton" value="四角すい" onclick="modelChange('shikakusui');"><br>
+        <input type="button" id="b9" class="figureButton" value="　球　" onclick="modelChange('sphere');"><br>
+        <input type="button" id="b10" class="figureButton" value="正四面体" onclick="modelChange('tetrahedron');"><br>
+        <input type="button" id="b11" class="figureButton" value="正八面体" onclick="modelChange('octahedron');"><br>
+        <input type="button" id="b12" class="figureButton" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
+        <input type="button" id="b13" class="figureButton" value="正二十面体" onclick="modelChange('icosahedron');"><br>
+        <input type="button" id="b14" class="figureButton" value="ドーナツ" onclick="modelChange('torus');"><br>
+    </div>
+
+    <script>
+        function modelSet() {
+            var figure = [
+                'cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone',
+                'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui',
+                'icosahedron', 'octahedron', 'torus'
+            ];
+            var el;
+
+            for (var i = 0; i < figure.length; i++) {
+                el = document.getElementById(figure[i]);
+                el.setAttribute('visible', false);
+            }
+        }
+        function modelChange(model) {
+            // var figure = ['cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui']
+            // var el;
+
+            // for (var i = 0; i < figure.length; i++) {
+            //     el = document.getElementById(figure[i]);
+            //     el.setAttribute('visible', false);
+            // }
+            modelSet();
+
+            var el = document.getElementById(model);
+            el.setAttribute('visible', true);
+
+        }
+    </script>
+
+    <script>
+        modelSet();
+        modelChange('cube');
+    </script>
+</body>
+
+</html>
