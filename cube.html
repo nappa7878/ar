@@ -43,6 +43,15 @@
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
             <a-cone id="shikakusui" segments-radial="4" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
+            <a-icosahedron id="icosahedron" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-icosahedron>
+            <a-octahedron id="octahedron" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-octahedron>
+            <a-torus id="torus" position="0 0.5 0" radius="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
+            </a-torus>
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -50,8 +59,8 @@
 
     </a-scene>
 
-    <div style="position: fixed; bottom: 150px;">
-        <input type="button" id="b1" value="立方体1" onclick="modelChange('cube');"><br>
+    <div style="position: fixed; bottom: 50px;">
+        <input type="button" id="b1" value="立方体" onclick="modelChange('cube');"><br>
         <input type="button" id="b2" value="直方体" onclick="modelChange('chokuhoutai');"><br>
         <input type="button" id="b3" value="三角柱" onclick="modelChange('sankakuchu');"><br>
         <input type="button" id="b5" value="円　柱" onclick="modelChange('cylinder');"><br>
@@ -59,15 +68,19 @@
         <input type="button" id="b7" value="三角すい" onclick="modelChange('sankakusui');"><br>
         <input type="button" id="b8" value="四角すい" onclick="modelChange('shikakusui');"><br>
         <input type="button" id="b4" value="　球　" onclick="modelChange('sphere');"><br>
-        <input type="button" id="b9" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
         <input type="button" id="b10" value="正四面体" onclick="modelChange('tetrahedron');"><br>
+        <input type="button" id="b10" value="正八面体" onclick="modelChange('octahedron');"><br>
+        <input type="button" id="b9" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
+        <input type="button" id="b9" value="正二十面体" onclick="modelChange('icosahedron');"><br>
+        <input type="button" id="b9" value="ドーナツ" onclick="modelChange('torus');"><br>
     </div>
 
     <script>
         function modelSet() {
             var figure = [
                 'cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone',
-                'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui'
+                'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui',
+                'icosahedron', 'octahedron', 'torus'
             ];
             var el;
 
