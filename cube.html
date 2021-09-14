@@ -17,32 +17,32 @@
     <a-scene embedded arjs="debugUIEnabled:false;">
 
         <a-marker preset="hiro">
-            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.90;"
-                wireframe="false">
+            <a-box id="cube" position="0 0.5 0" width="0.5" height="0.5"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-box>
-            <a-box id="chokuhoutai" position="0 1 0" width="1" height="2"
-                material="color: blue; transparent: true; opacity: 0.90;" wireframe="false">
+            <a-box id="chokuhoutai" position="0 1 0" width="0.5" height="1"
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-box>
             <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
-                material="color: blue; transparent: true; opacity: 0.90;" wireframe="false">
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-sphere>
             <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
                 material="color: green; transparent: true; opacity: 0.90;" wireframe="false">
             </a-cylinder>
             <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
-                material="color: orange; transparent: true; opacity: 0.90;" wireframe="false">
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-dodecahedron>
             <a-tetrahedron id="tetrahedron" position="0 0.5 0" radius="0.5"
-                material="color: hotpink; transparent: true; opacity: 0.90;" wireframe="false">
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-tetrahedron>
             <a-cone id="cone" position="0 0.5 0" radius-bottom="0.5" radius-top="0"
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
             <a-cylinder id="sankakuchu" segments-radial="3" position="0 0.5 0" radius="0.5" height="1"
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cylinder>
             <a-cone id="sankakusui" segments-radial="3" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
-                material="color: blue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
             <a-cone id="shikakusui" segments-radial="4" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
-                material="color: blue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
+                material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false"></a-cone>
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -51,7 +51,7 @@
     </a-scene>
 
     <div style="position: fixed; bottom: 150px;">
-        <input type="button" id="b1" value="立方体1" onclick="modelChange('cube');"><br>
+        <input type="button" id="b1" value="立方体" onclick="modelChange('cube');"><br>
         <input type="button" id="b1" value="直方体" onclick="modelChange('chokuhoutai');"><br>
         <input type="button" id="b2" value="三角柱" onclick="modelChange('sankakuchu');"><br>
         <input type="button" id="b2" value="　球　" onclick="modelChange('sphere');"><br>
