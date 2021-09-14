@@ -17,26 +17,28 @@
     <a-scene embedded arjs="debugUIEnabled:false;">
 
         <a-marker preset="hiro">
-            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.70;">
+            <a-box id="cube" position="0 0.5 0" material="color: red; transparent: true; opacity: 0.70;" wireframe=true>
             </a-box>
             <a-sphere id="sphere" position="0 0.5 0" radius="0.5"
-                material="color: blue; transparent: true; opacity: 0.70;">
+                material="color: blue; transparent: true; opacity: 0.70;" wireframe=true>
             </a-sphere>
             <a-cylinder id="cylinder" position="0 0.5 0" radius="0.5" height="1"
-                material="color: green; transparent: true; opacity: 0.70;">
+                material="color: green; transparent: true; opacity: 0.70;" wireframe=true>
             </a-cylinder>
             <a-dodecahedron id="dodecahedron" position="0 0.5 0" radius="0.5"
-                material="color: orange; transparent: true; opacity: 0.70;">
+                material="color: orange; transparent: true; opacity: 0.70;" wireframe=true>
             </a-dodecahedron>
             <a-tetrahedron id="tetrahedron" position="0 0.5 0" radius="0.5"
-                material="color: hotpink; transparent: true; opacity: 0.70;">
+                material="color: hotpink; transparent: true; opacity: 0.70;" wireframe=true>
             </a-tetrahedron>
             <a-cone id="cone" position="0 0.5 0" radius-bottom="0.5" radius-top="0"
-                material="color: skyblue; transparent: true; opacity: 0.70;"></a-cone>
+                material="color: skyblue; transparent: true; opacity: 0.70;" wireframe=true></a-cone>
             <a-cylinder id="sankakuchu" segments-radial="3" position="0 0.5 0" radius="0.5" height="1"
-                material="color: skyblue; transparent: true; opacity: 0.70;"></a-cylinder>
+                material="color: skyblue; transparent: true; opacity: 0.70;" wireframe=true></a-cylinder>
             <a-cone id="sankakusui" segments-radial="3" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
-                material="color: blue; transparent: true; opacity: 0.70;"></a-cone>
+                material="color: blue; transparent: true; opacity: 0.70;" wireframe=true></a-cone>
+            <a-cone id="shikakusui" segments-radial="4" position="0 0.5 0" radius-bottom="0.5" radius-top="0" height="1"
+                material="color: blue; transparent: true; opacity: 0.70;" wireframe=true></a-cone>
         </a-marker>
 
         <!-- AR用のカメラを置く -->
@@ -50,7 +52,8 @@
         <input type="button" id="b2" value="　球　" onclick="modelChange('sphere');"><br>
         <input type="button" id="b3" value="円　柱" onclick="modelChange('cylinder');"><br>
         <input type="button" id="b4" value="円すい" onclick="modelChange('cone');"><br>
-        <input type="button" id="b2" value="三角錐" onclick="modelChange('sankakusui');"><br>
+        <input type="button" id="b2" value="三角すい" onclick="modelChange('sankakusui');"><br>
+        <input type="button" id="b2" value="四角すい" onclick="modelChange('shikakusui');"><br>
         <input type="button" id="b5" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
         <input type="button" id="b6" value="正四面体" onclick="modelChange('tetrahedron');"><br>
     </div>
@@ -115,7 +118,7 @@
             el = document.getElementById($id);
             el.setAttribute('visible', true);
         }
-        function modelSet() {
+        function modelSet1() {
             var el;
             el = document.getElementById('cube');
             el.setAttribute('visible', true);
@@ -133,6 +136,19 @@
             el.setAttribute('visible', false);
             el = document.getElementById('sankakusui');
             el.setAttribute('visible', false);
+        }
+        function modelSet() {
+            var figure = ['cube', 'sphere', 'cylinder', 'cone', 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui']
+            var el;
+
+            el = document.getElementById(figure[0]);
+            el.setAttribute('visible', true);
+
+            for (var i = 1; i < figure.length; i++) {
+                el = document.getElementById(figure[i]);
+                el.setAttribute('visible', false);
+            }
+
         }
     </script>
 
