@@ -77,8 +77,13 @@
         <input type="button" id="b11" class="figureButton" value="正八面体" onclick="modelChange('octahedron');"><br>
         <input type="button" id="b12" class="figureButton" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
         <input type="button" id="b13" class="figureButton" value="正二十面体" onclick="modelChange('icosahedron');"><br>
-        <input type="button" id="b14" class="figureButton" value="ドーナツ" onclick="modelChange('torus');"><br>
-        <input type="button" id="b15" class="figureButton" value="色変更" onclick="colorChange();"><br>
+        <input type="button" id="b14" class="figureButton" value="ドーナツ" onclick="modelChange('torus');"><br><br>
+        <input type="button" id="b15" class="figureButton" value="赤色" onclick="colorChange('red');"><br>
+        <input type="button" id="b16" class="figureButton" value="緑色" onclick="colorChange('green');"><br>
+        <input type="button" id="b17" class="figureButton" value="青色" onclick="colorChange('blue');"><br>
+        <input type="button" id="b18" class="figureButton" value="黄色" onclick="colorChange('yellow');"><br>
+        <input type="button" id="b19" class="figureButton" value="橙色" onclick="colorChange('orange');"><br>
+        <input type="button" id="b20" class="figureButton" value="水色" onclick="colorChange('skyblue');"><br>
     </div>
 
     <script>
@@ -109,7 +114,7 @@
             el.setAttribute('visible', true);
 
         }
-        function colorChange() {
+        function colorChange(myColor) {
             var figure = [
                 'cube', 'chokuhoutai', 'sphere', 'cylinder', 'cone',
                 'dodecahedron', 'tetrahedron', 'sankakuchu', 'sankakusui', 'shikakusui',
@@ -119,7 +124,7 @@
 
             for (var i = 0; i < figure.length; i++) {
                 el = document.getElementById(figure[i]);
-                el.setAttribute('color', 'blue');
+                el.setAttribute('color', myColor);
             }
         }
     </script>
