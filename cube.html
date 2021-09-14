@@ -49,7 +49,7 @@
             <a-octahedron id="octahedron" position="0 0.5 0" radius="0.5"
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-octahedron>
-            <a-torus id="torus" position="0 0.5 0" radius="0.5"
+            <a-torus id="torus" position="0 0.5 0" radius-tubular="0.1"
                 material="color: skyblue; transparent: true; opacity: 0.90;" wireframe="false">
             </a-torus>
         </a-marker>
@@ -72,7 +72,7 @@
         <input type="button" id="b10" value="正八面体" onclick="modelChange('octahedron');"><br>
         <input type="button" id="b9" value="正十二面体" onclick="modelChange('dodecahedron');"><br>
         <input type="button" id="b9" value="正二十面体" onclick="modelChange('icosahedron');"><br>
-        <input type="button" id="b9" value="ドーナツ" onclick="modelChange('torus');"><br>
+        <input type="button" id="b9" value="ドーナツ1" onclick="modelChange('torus');"><br>
     </div>
 
     <script>
